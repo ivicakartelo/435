@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { TimeAgo } from './TimeAgo'
+import { ReactionButtons } from './ReactionButtons'
 
 export const PostsList = () => {
   const posts = useSelector(state => state.posts)
@@ -14,6 +15,7 @@ export const PostsList = () => {
       <h3>{post.title}</h3>
       <TimeAgo timestamp={post.date} />
       <p>{post.content.substring(0, 100)}</p>
+      <ReactionButtons post={post} />
     </article>
   ))
 
